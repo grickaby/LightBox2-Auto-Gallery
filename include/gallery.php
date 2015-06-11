@@ -4,6 +4,8 @@
 // A light weight PHP and LigthBox2 powered Auto Gallery Script
 // 
 // Version 1.0.0
+// Author: Geoffrey Rickaby
+// URL: http://github.com/grickaby/LightBox2-Auto-Gallery
 // 
 // To use, just drop an include on the page where you want a gallery
 // example - include('include/gallery.php'); 
@@ -15,7 +17,7 @@
 //======================================================================
 
 //Config Me
-$galleryName = "lawncare";
+$galleryName = "lawncare"; //Set the name of the gallery
 $maxWidth = 200; //Set the max width for the thumbnails
 $maxHeight = 200; // Set the max height for the thumbnails
 $location = "gallery/*"; //Location of the images
