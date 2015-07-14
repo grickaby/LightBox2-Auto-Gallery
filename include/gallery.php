@@ -1,4 +1,5 @@
 <?php
+
 //======================================================================
 // LightBox2 Auto Gallery
 // A light weight PHP and LigthBox2 powered Auto Gallery Script
@@ -16,10 +17,10 @@
 // For thumbnail styleing use built in style sheet
 // 
 // Updates:
+// 1.1.1 - PHP Optimizations
 // 1.1.0 - The plugin now pulls captions from the file name
 // 1.0.0 - Initial Release
 //======================================================================
-
 //Config Me
 $galleryName = "lawncare"; //Set the name of the gallery
 $maxWidth = 200; //Set the max width for the thumbnails
@@ -30,19 +31,23 @@ $separator = "_"; //If you want captions, put the character here that separates 
 $allowed = array('gif', 'png', 'jpg', 'jpeg'); //Allowed file extensions
 
 //Run Me
-$i = 1;
+$i = 0;
+$the_caption = '';
 $images = glob($location);
 foreach ($images as $image) :
+
     $file = pathinfo($image, PATHINFO_EXTENSION);
-    if($captions === true) {
-        $caption = str_replace($separator, " ", pathinfo($image, PATHINFO_FILENAME));
-        $the_caption = "data-title='". $caption . "'";
-    } else {
-        $the_caption = null;
-    }
-    
-    if (in_array($file, $allowed)) {
+
+    if (in_array($file, $allowed)) :
+
+        if ($captions) :
+            $caption = str_replace($separator, ' ', pathinfo($image, PATHINFO_FILENAME));
+            $the_caption = "data-title='" . $caption . "'";
+        endif;
+
         echo "<a href='" . $image . "' data-lightbox='" . $galleryName . "' " . $the_caption . "><img class='lb-thumb' data-lightbox='image-" . $i++ . "' src='" . $image . "' width='" . $maxWidth . "' height='" . $maxHeight . "' /></a>";
-    }
+
+    endif;
+
 endforeach;
 ?>
