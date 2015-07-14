@@ -4,7 +4,7 @@
 // LightBox2 Auto Gallery
 // A light weight PHP and LigthBox2 powered Auto Gallery Script
 // 
-// Version 1.1.0
+// Version 1.1.1
 // Author: Geoffrey Rickaby
 // URL: http://github.com/grickaby/LightBox2-Auto-Gallery
 // 
